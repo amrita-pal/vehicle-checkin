@@ -1,0 +1,10 @@
+class CreateFlatOwnerships < ActiveRecord::Migration[5.2]
+  def change
+    create_table :flat_ownerships do |t|
+      t.integer :flat_id
+      t.integer :user_id
+
+      t.timestamps
+    end
+  end
+end
