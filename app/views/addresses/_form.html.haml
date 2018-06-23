@@ -1,0 +1,27 @@
+= form_for @address do |f|
+  = f.label :address_line
+
+  = f.text_field :address_line
+
+  = f.label :address_type
+
+  = f.text_field :address_type
+  
+  = f.label :district
+
+  = f.text_field :district
+
+  = f.label :landmark
+
+  = f.text_field :landmark
+
+  = f.label :pin
+
+  = f.text_field :pin
+
+  = f.label :state
+
+  = f.text_field :state
+      
+  = f.submit :save
+  
