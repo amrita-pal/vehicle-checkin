@@ -1,0 +1,11 @@
+/
+  Welcome
+  <haml_silent> if user_signed_in?
+  </haml_silent><haml_block>  <li>
+  <haml_loud> link_to(&#39;Logout&#39;, destroy_user_session_path, method: :delete) </haml_loud>
+  </li>
+  </haml_block><haml_silent> else
+  </haml_silent><haml_block>  <li>
+  <haml_loud> link_to(&#39;Login&#39;, new_user_session_path)  </haml_loud>
+  </li>
+  </haml_block>

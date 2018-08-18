@@ -1,87 +1,87 @@
-/ / %nav.navbar.navbar-dark.bg-inverse
-/ /   = link_to "User", root_path, class: "navbar-brand"
-/ /   %ul.nav.navbar-nav
-/ /     %li.nav-item.active
-/ /       %a.nav-link{href: "User/new"}
-/ /         New User
-/ /         %span.sr-only (current)
-/ /     %li.nav-item
-/ /       %a.nav-link{href: "#"} About
-/ /   %form.form-inline.pull-xs-right
-/ /     %input.form-control{placeholder: "Search", type: "text"}/
-/ /     %button.btn.btn-success-outline{type: "submit"} Search
-
-/ %nav.navbar.navbar-expand-lg.navbar-light.bg-light
-/   / %a.navbar-brand{href: "#"} Navbar
-/   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", type: "button"}
-/     %span.navbar-toggler-icon
-/   #navbarSupportedContent.collapse.navbar-collapse
-/     %ul.navbar-nav.mr-auto
-/       %li.nav-item.dropdown
-/         %a#addressMenu.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
-/           Address
-/         .dropdown-menu{"aria-labelledby"=>"addressMenu"}
-/           %a.dropdown-item{href: "new_address_path"} Create Address
-/           %a.dropdown-item{href: "address_path"} Show Address
-
-/       %li.nav-item.dropdown
-/         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button"}
-/           Profiles
-/         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-/           %a.dropdown-item{href: "new_profiles_path"} Create Profiles
-/           %a.dropdown-item{href: "profile_path"} Show Profiles
-
-/       %li.nav-item.dropdown
-/         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button"}
-/           Flats
-/         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-/           %a.dropdown-item{href: "new_flats_path"} Create Profiles
-/           %a.dropdown-item{href: "#"} Show Profiles
-
-/       %li.nav-item.dropdown
-/         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button"}
-/           Flat Ownerships
-/         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-/           %a.dropdown-item{href: "#"} Create Profiles
-/           %a.dropdown-item{href: "#"} Show Profiles
-
-/       %li.nav-item.dropdown
-/         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button"}
-/           Vehicles
-/         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-/           %a.dropdown-item{href: "#"} Create Profiles
-/           %a.dropdown-item{href: "#"} Show Profiles
-
-
-/       - if user_signed_in?
-/         %li.float-right
-/           = link_to('Logout', destroy_user_session_path, method: :delete)
-/       - else
-/         %li.float-right
-/         = link_to('Login', new_user_session_path)
+-#  %nav.navbar.navbar-dark.bg-inverse
+-#    = link_to "User", root_path, class: "navbar-brand"
+-#    %ul.nav.navbar-nav
+-#      %li.nav-item.active
+-#        %a.nav-link{href: "User/new"}
+-#          New User
+-#          %span.sr-only (current)
+-#      %li.nav-item
+-#        %a.nav-link{href: "#"} About
+-#    %form.form-inline.pull-xs-right
+-#      %input.form-control{placeholder: "Search", type: "text"}/
+-#      %button.btn.btn-success-outline{type: "submit"} Search
 
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  %a.navbar-brand{:href => "#"} Navbar
-  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+  %a.navbar-brand{href: root_path} Vehicle
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", type: "button"}
     %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
-      %li.nav-item.active
-        %a.nav-link{:href => "#"}
-          Home
-          %span.sr-only (current)
-      %li.nav-item
-        %a.nav-link{:href => "#"} Link
       %li.nav-item.dropdown
-        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-          Dropdown
+        %a#addressMenu.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
+          Address
+        .dropdown-menu{"aria-labelledby"=>"addressMenu"}
+          %a.dropdown-item{href: new_address_path} Create Address
+          %a.dropdown-item{href: addresses_path} Show Address
+
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button"}
+          Profiles
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          %a.dropdown-item{:href => "#"} Action
-          %a.dropdown-item{:href => "#"} Another action
-          .dropdown-divider
-          %a.dropdown-item{:href => "#"} Something else here
-      %li.nav-item
-        %a.nav-link.disabled{:href => "#"} Disabled
-    %form.form-inline.my-2.my-lg-0
-      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+          %a.dropdown-item{href: new_profile_path} Create Profiles
+          %a.dropdown-item{href: profiles_path} Show Profiles
+
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button"}
+          Flats
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          %a.dropdown-item{href: new_flat_path} Create Profiles
+          %a.dropdown-item{href: "#"} Show Profiles
+
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button"}
+          Flat Ownerships
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          %a.dropdown-item{href: "#"} Create Profiles
+          %a.dropdown-item{href: "#"} Show Profiles
+
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button"}
+          Vehicles
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          %a.dropdown-item{href: "#"} Create Profiles
+          %a.dropdown-item{href: "#"} Show Profiles
+
+      
+    - if user_signed_in?
+      /%li.float-right
+      = link_to('Logout', destroy_user_session_path, method: :delete)
+    - else
+      -# %li.float-right
+      = link_to('Login', new_user_session_path)
+
+-# %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+-#   %a.navbar-brand{:href => "#"} Navbar
+-#   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+-#     %span.navbar-toggler-icon
+-#   #navbarSupportedContent.collapse.navbar-collapse
+-#     %ul.navbar-nav.mr-auto
+-#       %li.nav-item.active
+-#         %a.nav-link{:href => "#"}
+-#           Home
+-#           %span.sr-only (current)
+-#       %li.nav-item
+-#         %a.nav-link{:href => "#"} Link
+-#       %li.nav-item.dropdown
+-#         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+-#           Dropdown
+-#         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+-#           %a.dropdown-item{:href => "#"} Action
+-#           %a.dropdown-item{:href => "#"} Another action
+-#           .dropdown-divider
+-#           %a.dropdown-item{:href => "#"} Something else here
+-#       %li.nav-item
+-#         %a.nav-link.disabled{:href => "#"} Disabled
+-#     %form.form-inline.my-2.my-lg-0
+-#       %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+-#       %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
